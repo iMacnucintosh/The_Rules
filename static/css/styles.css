@@ -203,6 +203,7 @@ main {
     background-color: white;
     z-index: 1;
     padding-left: 25px;
+    display: none;
 }
 
 .header-rules-list {

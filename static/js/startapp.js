@@ -5,6 +5,16 @@
 $(document).ready(function(){
     M.AutoInit();
 
+    $('.left-top.corner').click(function(){
+       $('.rules').fadeIn();
+    });
+
+    $('.close-rules').click(function(){
+       $('.rules').fadeOut();
+    });
+
+
+
     $(".remove-player").click(function(){
         var current_players = parseInt($('.player-count').text());
 
