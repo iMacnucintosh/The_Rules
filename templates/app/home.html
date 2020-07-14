@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <title>TheRules</title>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/favicon.png" type="image/x-icon">
+
+    <!---------------------------------------- Responsive and Theme ------------------------------------------------------->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="white">
+
+    <!-- Para que parezca una app nativa de IOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+    <!-- Para que parezca una app nativa de Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!-- Styles -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Six+Caps&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<main>
+    <header>
+        <div class="left-top corner waves-effect waves-light">
+            <i class="material-icons">format_list_bulleted</i>
+        </div>
+        <div class="right-top corner waves-effect waves-light">
+            <i class="material-icons">settings</i>
+        </div>
+    </header>
+    <main>
+        <section class="logo">TheRules</section>
+        <section class="players">
+            <article class="setup">
+                <i class="material-icons">group</i>
+                <p>Seleccione número de jugadores</p>
+            </article>
+            <article class="players-picker">
+                <div class="remove-player waves-effect waves-light"><i class="material-icons">remove</i></div>
+                <div class="player-count">2</div>
+                <div class="add-player waves-effect waves-light"><i class="material-icons">add</i></div>
+            </article>
+        </section>
+
+
+        <section class="rules">
+
+            <article class="header-rules-list">
+                <h1>Active Reglas</h1>
+                <div><i class="material-icons">close</i></div>
+            </article>
+
+            <article class="rules-list">
+                <div class="rule row">
+                    <div class="col s3 no-padding"><div class="rule-image"></div></div>
+
+                    <div class="rule-info col s6">
+                        <h1>Nombre Regla</h1>
+                        <h2>Breve descripción de la regla</h2>
+                    </div>
+                    <div class="rule-switch col s3">
+                        <div class="switch">
+                            <label>
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="rule row">
+                    <div class="col s3 no-padding"><div class="rule-image"></div></div>
+
+                    <div class="rule-info col s6">
+                        <h1>Nombre Regla</h1>
+                        <h2>Breve descripción de la regla</h2>
+                    </div>
+                    <div class="rule-switch col s3">
+                        <div class="switch">
+                            <label>
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+        </section>
+
+    </main>
+</main>
+
+
+<script type="text/javascript" src="/static/js/general_functions.js"></script>
+<script type="text/javascript" src="/static/js/startapp.js"></script>
+
+</body>
+</html>

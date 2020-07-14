@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(h^^qw3alj_5cvw41vri#)3$5vq)pt9o%$p=4j(u2+_)pf()^i'
+SECRET_KEY = 'vovr6uho@6+u_$5qys-0dl+bd_=0oh-ui+rzmg4ki8^t73**be'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -29,6 +29,27 @@ ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+)
 
 
 # Application definition
@@ -40,17 +61,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'App.apps.AppConfig',
     'corsheaders',
+    'webpush',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'TheRules.urls'
@@ -58,7 +83,8 @@ ROOT_URLCONF = 'TheRules.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,20 +129,22 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+WEBPUSH_SETTINGS = {
+   "VAPID_PUBLIC_KEY": "BMlHpeNfHHgXhsyOmNDjM6S4kJ5IiJwHV6MdFamcLTZ17_hw8S1uPHRZETc0ORWBKfskEuIw_tV0Urg_0bJ-R1s",
+   "VAPID_PRIVATE_KEY": "UP56WTB9F-H-NVOz2qbOBwDk-1txARUaCk7olQWdXdk",
+   "VAPID_ADMIN_EMAIL": "mlopez@syltec.es"
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'es'
 
+USE_TZ = True
 TIME_ZONE = 'Europe/Madrid'
-#TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
 USE_L10N = True
-
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -128,7 +156,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "Veo")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "TheRules")
 
 LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/'
