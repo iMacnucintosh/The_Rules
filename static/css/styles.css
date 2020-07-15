@@ -92,6 +92,7 @@ html:first-line {
     background-color: #5a5a5a;
     width: 70px;
     height: 70px;
+    z-index: 2;
 }
 .corner i {
     color: white;
@@ -131,12 +132,12 @@ main {
     color: white;
     text-align: center;
     font-size: 1.7em;
-    height: 50%;
+    height: 33.33333333333333%;
     padding-top: 20%;
 }
 
 .players {
-    height: 50%;
+    height: 33.33333333333333%;
     padding-top: 20%;
 }
 
@@ -156,7 +157,7 @@ main {
     color: white;
     font-size: 17px;
     margin: 0;
-
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .players-picker {
@@ -201,17 +202,17 @@ main {
     right:0;
     bottom: 0;
     background-color: white;
-    z-index: 1;
-    padding-left: 25px;
+    z-index: 3;
     display: none;
 }
 
 .header-rules-list {
     display: flex;
-    padding-top: 1em;
+    padding-top: .6em;
     padding-bottom: .5em;
     padding-right: 30px;
     justify-content: space-between;
+    padding-left: 25px;
 }
 
 .header-rules-list > div {
@@ -236,23 +237,26 @@ main {
 }
 
 .rule {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 5px;
     display: flex;
+    padding-left: 15px;
 }
 
 .rule-image {
-    width: 60px;
-    height: 60px;
+    /*width: 60px;*/
+    /*height: 60px;*/
+    height: 100%;
     background-image: url("/static/images/dado.png");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 50%;
 }
 
 .rule-info {
     padding: 0 !important;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px !important;
+    padding-left: 5px !important;
 }
 
 .rule-info h1 {
@@ -265,8 +269,9 @@ main {
     padding-bottom: 5px;
 }
 
-.rule-info h2 {
-    color: black;
+.rule-info p {
+    color: #5a5a5a;
+    text-align: justify;
     font-size: 12px;
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
@@ -276,6 +281,8 @@ main {
 .rule-switch {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px !important;
 }
 
 .switch {
@@ -289,4 +296,93 @@ main {
 .switch label input[type=checkbox]:checked+.lever:after {
     background-color: #ffffff;
     box-shadow: 0px 0px 3px #676767;
+}
+
+.start-game {
+    height: 33.33333333333333%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.start-game > article {
+    padding: 20px;
+    width: 100%;
+    height: 70px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: gray;
+    background-color: #5a5a5a;
+    box-shadow: inset 0px 0px 20px 4px #383838;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 26px;
+}
+
+.game {
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background-color: white;
+    z-index: 1;
+    transform: translateY(100%);
+    transition: .3s;
+}
+
+.game.active {
+    transform: translateY(0%);
+}
+
+.current-rule {
+    height: 80%;
+    padding: .8em;
+    padding-top: 90px;
+}
+
+.bg-rule {
+    background-color: rgba(0, 0, 0, 0.05);
+    height: 100%;
+    border-radius: 23px;
+}
+
+.next-rule {
+    height: 20%;
+    padding: .8em;
+    padding-top: 10px;
+}
+
+.bg-next-rule {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    height: 100%;
+    border-radius: 23px;
+    display: flex;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.bg-next-rule > div {
+    display: flex;
+    align-items: center;
+}
+
+
+.bg-next-rule i {
+    color: #5a5a5a;
+    font-size: 40px;
+}
+
+.dice {
+    flex-grow: 1;
+    color: #5a5a5a;
+    display: flex;
+    justify-content: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 32px;
 }

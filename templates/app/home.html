@@ -10,11 +10,11 @@
 
     <!---------------------------------------- Responsive and Theme ------------------------------------------------------->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="white">
+    <meta name="theme-color" content="black">
 
     <!-- Para que parezca una app nativa de IOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <!-- Para que parezca una app nativa de Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -29,6 +29,7 @@
 
     <!-- Styles -->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/jquery.dialog.css' %}" rel="stylesheet"/>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -62,6 +63,9 @@
                 <div class="add-player waves-effect waves-light"><i class="material-icons">add</i></div>
             </article>
         </section>
+        <section class="start-game">
+            <article class="waves-effect waves-light">COMENZAR</article>
+        </section>
 
 
         <section class="rules">
@@ -72,47 +76,49 @@
             </article>
 
             <article class="rules-list">
-                <div class="rule row">
-                    <div class="col s3 no-padding"><div class="rule-image"></div></div>
+                {% for rule in rules %}
+                    <div id="rule_{{ rule.id }}" class="rule row">
+                        <div class="col s3 no-padding"><div class="rule-image" style="background-image: url({{ rule.image }})"></div></div>
 
-                    <div class="rule-info col s6">
-                        <h1>Nombre Regla</h1>
-                        <h2>Breve descripción de la regla</h2>
-                    </div>
-                    <div class="rule-switch col s3">
-                        <div class="switch">
-                            <label>
-                                <input type="checkbox">
-                                <span class="lever"></span>
-                            </label>
+                        <div class="rule-info col s6">
+                            <h1>{{ rule.name }}</h1>
+                            <p>{{ rule.description }}</p>
+                        </div>
+                        <div class="rule-switch col s3">
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="rule row">
-                    <div class="col s3 no-padding"><div class="rule-image"></div></div>
-
-                    <div class="rule-info col s6">
-                        <h1>Nombre Regla</h1>
-                        <h2>Breve descripción de la regla</h2>
-                    </div>
-                    <div class="rule-switch col s3">
-                        <div class="switch">
-                            <label>
-                                <input type="checkbox">
-                                <span class="lever"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </article>
 
 
         </section>
 
+
+        <section class="game">
+            <article class="current-rule">
+                <div class="bg-rule">
+
+                </div>
+            </article>
+            <article class="next-rule">
+                <div onclick="nextRule()" class="bg-next-rule waves-effect">
+                    <div><i class="material-icons">casino</i></div>
+                    <div class="dice">TIRAR</div>
+                    <div><i class="material-icons">casino</i></div>
+                </div>
+            </article>
+        </section>
+
     </main>
 </main>
 
-
+<script type="text/javascript" src="/static/js/jquery.dialog.js"></script>
 <script type="text/javascript" src="/static/js/general_functions.js"></script>
 <script type="text/javascript" src="/static/js/startapp.js"></script>
 
