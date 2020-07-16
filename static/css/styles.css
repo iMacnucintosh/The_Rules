@@ -204,6 +204,7 @@ main {
     background-color: white;
     z-index: 3;
     display: none;
+    overflow: auto;
 }
 
 .header-rules-list {
