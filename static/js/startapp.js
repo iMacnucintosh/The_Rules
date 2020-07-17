@@ -6,7 +6,7 @@ $(document).ready(function(){
     M.AutoInit();
 
     $('.left-top.corner').click(function(){
-        $('.rules').fadeIn(200);
+        $('.rules').addClass('active')
     });
 
     $('.right-top.corner').click(function(){
@@ -14,7 +14,7 @@ $(document).ready(function(){
     });
 
     $('.close-rules').click(function(){
-        $('.rules').fadeOut(200);
+        $('.rules').removeClass('active')
     });
 
     $('.remove-player').click(function(){
@@ -31,6 +31,38 @@ $(document).ready(function(){
     });
 
     $('.start-game > article').click(function(){
-       $('.game').addClass('active');
+        $('.game').addClass('active');
     });
+
+    // $('.switch').find("input").change(function(){
+    //     var value = $(this).prop("checked");
+    //     var id = $(this).attr("id").split("_")[1];
+    //
+    //     if(localStorage.getItem("rules") == undefined){
+    //         localStorage.setItem("rules", JSON.stringify([]))
+    //     }
+    //
+    //     var active_rules = JSON.parse(localStorage.getItem("rules"));
+    //
+    //     var exists = false;
+    //
+    //     for(var i=0; i<active_rules.length; i++){
+    //         if(parseInt($(this).attr("id").split("_")[1]) == parseInt(active_rules[i])){
+    //             existe = true;
+    //         }
+    //     }
+    //
+    //
+    //     console.log(exists)
+    //
+    //     if(!exists){
+    //         active_rules.push(parseInt($(this).attr("id").split("_")[1]));
+    //     }
+    //
+    //     localStorage.setItem("rules", JSON.stringify(active_rules));
+    //
+    //     //console.log(localStorage.getItem("rules"));
+    //
+    // })
+
 });

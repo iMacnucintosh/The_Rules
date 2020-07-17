@@ -203,8 +203,14 @@ main {
     bottom: 0;
     background-color: white;
     z-index: 3;
-    display: none;
     overflow: auto;
+    transform: translateX(-110%);
+    transition: .3s;
+    box-shadow: -6px 0px 20px 5px #777;
+}
+
+.rules.active {
+    transform: translateX(0%);
 }
 
 .header-rules-list {
@@ -331,24 +337,74 @@ main {
     bottom: 0;
     background-color: white;
     z-index: 1;
-    transform: translateY(100%);
+    transform: translateY(110%);
     transition: .3s;
+    padding-top: 75px;
+    box-shadow: 0px -6px 20px 5px #545454
 }
 
 .game.active {
     transform: translateY(0%);
 }
 
-.current-rule {
-    height: 80%;
+.current-rule-name {
     padding: .8em;
-    padding-top: 90px;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    height: 15%;
+    display: flex;
+    align-items: center;
 }
 
-.bg-rule {
+.current-rule-name div {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 23px;
+    height: 58px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.current-rule-name h1 {
+    color: #5a5a5a;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 27px;
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+}
+
+.current-rule {
+    height: 65%;
+    padding: .8em;
+    padding-top: .4em;
+}
+
+.active_rule {
     background-color: rgba(0, 0, 0, 0.05);
     height: 100%;
     border-radius: 23px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .3s;
+    position: relative;
+}
+
+.shoot {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 20px;
+    bottom: 20px;
+    background-image: url(/static/images/shoot.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.fade-rule {
+    opacity: 0;
 }
 
 .next-rule {
