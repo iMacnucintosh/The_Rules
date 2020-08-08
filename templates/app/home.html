@@ -46,12 +46,21 @@
         <div class="left-top corner waves-effect waves-light">
             <i class="material-icons">format_list_bulleted</i>
         </div>
+
+        <div class="btn-info-partida">
+            <h1>The Rules</h1>
+        </div>
+
+<!--        <div class="btn-info-partida">-->
+<!--            <button class="btn waves-effect waves-light">Info Partida</button>-->
+<!--        </div>-->
+
         <div class="right-top corner waves-effect waves-light">
             <i class="material-icons">settings</i>
         </div>
     </header>
     <main>
-        <section class="logo">TheRules</section>
+        <section class="logo">The Rules</section>
         <section class="players">
             <article class="setup">
                 <i class="material-icons">group</i>
@@ -64,6 +73,8 @@
             </article>
         </section>
         <section class="start-game">
+            <audio id="shootON"><source src="/static/audio/9shot.wav" type="audio/wav"></audio>
+            <audio id="shootOFF"><source src="/static/audio/9shotPop.wav" type="audio/wav"></audio>
             <article class="waves-effect waves-light">COMENZAR</article>
         </section>
 
@@ -78,7 +89,10 @@
             <article class="rules-list">
                 {% for rule in rules %}
                     <div id="rule_{{ rule.id }}" class="rule row">
-                        <div class="col s3 no-padding"><div class="rule-image" style="background-image: url({{ rule.image }})"></div></div>
+                        <div class="col s3 no-padding">
+<!--                            <div class="rule-image" style="background-image: url({{ rule.image }})"></div>-->
+                            <img class="rule-image materialboxed" src="{{ rule.image }}">
+                        </div>
 
                         <div class="rule-info col s6">
                             <h1>{{ rule.name }}</h1>
