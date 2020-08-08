@@ -5,6 +5,7 @@ html, body, main {
 body {
     background-image: url(/static/images/TheRulesWallpaper1.png);
     background-size: cover;
+    background-position: center;
 }
 
 /* Background */
