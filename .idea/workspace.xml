@@ -4,10 +4,6 @@
     <list default="true" id="31eea55f-0ce6-4773-a6d7-460d105791a6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dado.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/general_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/general_functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/startapp.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/startapp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
