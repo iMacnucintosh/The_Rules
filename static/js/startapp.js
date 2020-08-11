@@ -89,4 +89,29 @@ $(document).ready(function(){
 
      });
 
+    $('#info_partida').click(function(){
+
+        $('#reglas_establecidas .collection-item').remove();
+        $('#palabras_prohibidas .collection-item').remove();
+
+        if (localStorage.getItem("reglas_establecidas") != undefined){
+            var reglas_establecidas = JSON.parse(localStorage.getItem("reglas_establecidas"));
+            for(var i=0; i<reglas_establecidas.length; i++){
+                $('#reglas_establecidas').append('<li class="collection-item">' + reglas_establecidas[i] + '<i class="material-icons" onclick="clearRule(this, ' + i + ')">delete</i></li>');
+            }
+        }else{
+            $('#reglas_establecidas').append('<li class="collection-item">Ninguna regla establecida</li>');
+        }
+
+        if (localStorage.getItem("palabras_prohibidas") != undefined){
+            var palabras_prohibidas = JSON.parse(localStorage.getItem("palabras_prohibidas"));
+            for(var i=0; i<palabras_prohibidas.length; i++){
+                $('#palabras_prohibidas').append('<li class="collection-item">' + palabras_prohibidas[i] + '<i class="material-icons" onclick="clearPalabra(this,' + i + ')">delete</i></li>');
+            }
+        }else{
+            $('#palabras_prohibidas').append('<li class="collection-item">Ninguna palabra prohibida</li>');
+        }
+
+    });
+
 });
