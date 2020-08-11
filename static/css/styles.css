@@ -32,11 +32,6 @@ body {
     z-index: 2;
 }
 
-
-#modal_reglas_palabras h4 {
-    font-size: 22px;
-}
-
 #modal_reglas_palabras .collection-item {
     padding-right: 45px;
     position: relative;
@@ -47,6 +42,18 @@ body {
     right: 5px;
     top: 9px;
     color: #fd4949;
+}
+
+#modal_reglas_palabras .collection.with-header .collection-header {
+    background-color: transparent !important;
+}
+
+#modal_reglas_palabras .collection .collection-item {
+    background-color: transparent !important;
+}
+
+#modal_reglas_palabras .collection {
+    border: none !important;
 }
 
 .danger-color {

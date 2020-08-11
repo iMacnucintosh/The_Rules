@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="31eea55f-0ce6-4773-a6d7-460d105791a6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/general_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/general_functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/startapp.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/startapp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +37,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -268,9 +266,9 @@
     <option name="processedProjectFiles" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="623" y="191" width="824" height="641" key="find.popup" timestamp="1597158083680">
+    <state x="623" y="191" width="824" height="641" key="find.popup" timestamp="1597159686089">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="191" width="824" height="641" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1597158083680" />
+    <state x="623" y="191" width="824" height="641" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1597159686089" />
   </component>
 </project>
