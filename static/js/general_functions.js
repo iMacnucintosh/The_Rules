@@ -40,8 +40,6 @@ function nextRule(){
 
             last_rule = random_number;
 
-            counter[random_number] += 1;
-
             var random_rule = active_rules[random_number];
             image_rule = $('#' + random_rule).find(".rule-image").attr("src");
 
