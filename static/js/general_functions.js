@@ -32,12 +32,15 @@ function nextRule(){
                 }
             });
         }else{
-
             var random_number = Math.floor((Math.random() * active_rules.length));
 
             while(random_number == last_rule){
                 random_number = Math.floor((Math.random() * active_rules.length));
             }
+
+            last_rule = random_number;
+
+            counter[random_number] += 1;
 
             var random_rule = active_rules[random_number];
             image_rule = $('#' + random_rule).find(".rule-image").attr("src");
@@ -53,8 +56,6 @@ function nextRule(){
             $('.current-rule-name h1').text(name_rule);
 
             checkSpecialRule(parseInt(random_rule.split("_")[1]));
-
-            last_rule = random_number;
 
         }
     }else{
